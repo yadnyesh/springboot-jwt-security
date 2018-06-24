@@ -14,8 +14,6 @@ public class TokenController {
 
 	@PostMapping("/{userName}")
 	public String generateJwtToken (@RequestBody final JwtUser jwtUser) {
-		
-		JwtTokenGenerator jwtTokenGenerator = JwtTokenGenerator();
 		return jwtTokenGenerator.generate(jwtUser);
 	}
 }
