@@ -2,6 +2,7 @@ package io.yadnyesh.security.springbootjwtsecurity.security;
 
 import io.yadnyesh.security.springbootjwtsecurity.model.JwtAuthenticationToken;
 import io.yadnyesh.security.springbootjwtsecurity.model.JwtUser;
+import io.yadnyesh.security.springbootjwtsecurity.model.JwtUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider;
@@ -37,8 +38,7 @@ public class JwtAuthenticationProvider extends AbstractUserDetailsAuthentication
 		List<GrantedAuthority> grantedAuthorities = AuthorityUtils
 														.commaSeparatedStringToAuthorityList(jwtUser.getRole());
 		
-		
-		return JwtUserDetails(jwtUser.getUserName(), jwtUser.getUserId(), token, grantedAuthorities);
+		return new JwtUserDetails(jwtUser.getUserName(), jwtUser.getUserId(), token, grantedAuthorities);
 	}
 	
 	@Override

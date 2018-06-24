@@ -33,7 +33,7 @@ public class JwtSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Bean
 	public JwtAuthenticationTokenFilter authenticationTokenFilter() {
 		JwtAuthenticationTokenFilter filter = new JwtAuthenticationTokenFilter();
-		filter.setAuthenticationMananger(authenticationManager());
+		filter.setAuthenticationManager(authenticationManager());
 		filter.setAuthenticationSuccessHandler(new JwtSuccesHandler());
 		return filter;
 	}
