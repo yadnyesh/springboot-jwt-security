@@ -18,7 +18,10 @@ public class JwtUserDetails implements UserDetails {
 	private Collection<? extends GrantedAuthority> grantedAuthorities;
 	
 	public JwtUserDetails(String userName, long id, String token, List<GrantedAuthority> grantedAuthorities){
-	
+		this.userName = userName;
+		this.id = id;
+		this.token = token;
+		this.grantedAuthorities = grantedAuthorities;
 	}
 	
 	
@@ -55,5 +58,37 @@ public class JwtUserDetails implements UserDetails {
 	@Override
 	public boolean isEnabled() {
 		return false;
+	}
+	
+	public String getUserName() {
+		return userName;
+	}
+	
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	
+	public String getToken() {
+		return token;
+	}
+	
+	public void setToken(String token) {
+		this.token = token;
+	}
+	
+	public long getId() {
+		return id;
+	}
+	
+	public void setId(long id) {
+		this.id = id;
+	}
+	
+	public Collection<? extends GrantedAuthority> getGrantedAuthorities() {
+		return grantedAuthorities;
+	}
+	
+	public void setGrantedAuthorities(Collection<? extends GrantedAuthority> grantedAuthorities) {
+		this.grantedAuthorities = grantedAuthorities;
 	}
 }
