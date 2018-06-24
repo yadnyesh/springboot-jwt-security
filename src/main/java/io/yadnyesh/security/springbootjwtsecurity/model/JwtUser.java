@@ -9,12 +9,15 @@ public class JwtUser {
 	private String role;
 	
 	public void setId(long userId) {
+		this.userId = userId;
 	}
 	
 	public void setRole(String role) {
+		this.role = role;
 	}
 	
-	public void setUserName(String subject) {
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	
 	public String getUserName() {
