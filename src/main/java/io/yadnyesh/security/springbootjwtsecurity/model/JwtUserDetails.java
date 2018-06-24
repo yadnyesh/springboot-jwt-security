@@ -24,11 +24,10 @@ public class JwtUserDetails implements UserDetails {
 		this.grantedAuthorities = grantedAuthorities;
 	}
 	
-	
-//	@Override
-//	public Collection<? extends GrantedAuthority> getAuthorities() {
-//		return null;
-//	}
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return grantedAuthorities;
+	}
 	
 	@Override
 	public String getPassword() {
