@@ -15,7 +15,7 @@ public class JwtUserDetails implements UserDetails {
 	
 	private long id;
 	
-	private Collection<GrantedAuthority> grantedAuthorities;
+	private Collection<? extends GrantedAuthority> grantedAuthorities;
 	
 	public JwtUserDetails(String userName, long id, String token, List<GrantedAuthority> grantedAuthorities){
 	
